@@ -23,24 +23,24 @@ export default function Loader() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="flex items-center gap-4 text-primary"
+            className="flex items-center gap-5 text-primary"
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-primary/70 bg-background/40">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full border border-primary/70 bg-background/40">
               <Image
                 src="/logo.png"
                 alt="Skyridge Global"
-                width={28}
-                height={28}
+                width={40}
+                height={40}
               />
             </div>
             <div className="text-left">
-              <div className="text-sm font-semibold tracking-[0.3em]">
+              <div className="text-base font-semibold tracking-[0.35em]">
                 SKYRIDGE
               </div>
-              <div className="text-[0.65rem] uppercase tracking-[0.4em] text-text-muted">
+              <div className="text-xs uppercase tracking-[0.45em] text-text-muted">
                 Global
               </div>
             </div>

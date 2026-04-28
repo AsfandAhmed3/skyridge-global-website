@@ -72,11 +72,8 @@ export default function Navigation() {
         isScrolled ? "bg-background/80 backdrop-blur" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto w-full max-w-6xl px-4 py-4">
-        <div
-          ref={navRef}
-          className="flex items-center gap-6 rounded-2xl border border-border-subtle bg-surface/60 px-5 py-3 shadow-lg shadow-black/30"
-        >
+      <div ref={navRef} className="mx-auto w-full max-w-6xl px-4 py-4">
+        <div className="flex items-center gap-6 rounded-2xl border border-border-subtle bg-surface/60 px-5 py-3 shadow-lg shadow-black/30">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/60 bg-background/60">
               <Image src="/logo.png" alt="Skyridge Global" width={26} height={26} />
@@ -97,7 +94,7 @@ export default function Navigation() {
                 {item.children ? (
                   <button
                     type="button"
-                    className="px-1 py-2 transition-colors hover:text-text-main"
+                    className="px-1 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:text-text-main"
                     aria-expanded={openLabel === item.label}
                     onClick={() =>
                       setOpenLabel((prev) =>
@@ -110,7 +107,7 @@ export default function Navigation() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-1 py-2 transition-colors hover:text-text-main"
+                    className="px-1 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:text-text-main"
                   >
                     {item.label}
                   </Link>
