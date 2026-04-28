@@ -175,7 +175,11 @@ export default function Navigation() {
                   ) : null}
                 </div>
               ))}
-              <Link href="/contact" className="btn-primary mt-2">
+              <Link
+                href="/contact"
+                className="btn-primary mt-2"
+                onClick={() => setMobileOpen(false)}
+              >
                 Get Started
               </Link>
             </div>

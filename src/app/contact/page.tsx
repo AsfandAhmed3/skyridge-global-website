@@ -15,9 +15,9 @@ const contacts = [
       "Request a sector opportunity brief or deal packaging overview.",
   },
   {
-    title: "Global Offices",
+    title: "Global Coverage",
     description:
-      "Engage with our teams in London, Dubai, Singapore, Geneva, or Lisbon.",
+      "Cross-border advisory support for international mobility and investment mandates.",
   },
   {
     title: "Compliance Questions",

@@ -5,9 +5,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "99.8%", label: "Success Rate" },
-  { value: "14+", label: "Jurisdictions" },
-  { value: "150+", label: "Senior Advisors" },
+  { value: "Senior-Led", label: "Advisor Attention" },
+  { value: "Compliance-First", label: "Regulatory Clarity" },
+  { value: "Global Scope", label: "Cross-Border Strategy" },
 ];
 
 export default function Hero() {
@@ -53,7 +53,7 @@ export default function Hero() {
           <div className="mt-4 grid gap-6 text-[0.6rem] uppercase tracking-[0.3em] text-text-muted sm:grid-cols-3">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col gap-1">
-                <span className="text-lg font-semibold text-text-main">
+                <span className="text-sm font-semibold text-text-main">
                   {stat.value}
                 </span>
                 <span>{stat.label}</span>
@@ -72,15 +72,17 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08)_0%,_transparent_40%)]" />
             <div className="absolute bottom-10 right-10 w-56 rounded-2xl border border-border-subtle bg-surface/80 p-4 shadow-xl shadow-black/40">
               <div className="text-[0.6rem] uppercase tracking-[0.3em] text-text-muted">
-                Trusted Globally
+                Private Mandates
               </div>
               <div className="mt-2 text-sm font-semibold text-text-main">
-                Active Clients
+                Discreet Advisory
               </div>
               <div className="mt-2 text-2xl font-semibold text-primary">
-                2,400+
+                By Referral
               </div>
-              <div className="mt-1 text-xs text-text-muted">Since 2008</div>
+              <div className="mt-1 text-xs text-text-muted">
+                Senior partner engagement only
+              </div>
             </div>
           </div>
         </motion.div>

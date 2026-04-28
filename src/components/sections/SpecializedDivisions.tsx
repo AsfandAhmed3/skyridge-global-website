@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Building2, Briefcase, Shield, Landmark } from "lucide-react";
+import { Building2, Briefcase, Globe, Landmark, LineChart, Shield } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 const divisions = [
@@ -19,6 +19,7 @@ const divisions = [
     ],
     href: "/services/migration-advisory",
     accent: "border-l-4 border-emerald-400/60",
+    icon: Globe,
   },
   {
     number: "02",
@@ -33,6 +34,7 @@ const divisions = [
     ],
     href: "/services/business-advisory",
     accent: "border-l-4 border-primary/60",
+    icon: LineChart,
   },
 ];
 
@@ -77,7 +79,9 @@ export default function SpecializedDivisions() {
           </Link>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          {divisions.map((division, index) => (
+          {divisions.map((division, index) => {
+            const Icon = division.icon;
+            return (
             <motion.article
               key={division.title}
               className={`group flex h-full flex-col justify-between rounded-2xl border border-border-subtle bg-surface/70 p-8 shadow-lg ${division.accent}`}
@@ -90,7 +94,9 @@ export default function SpecializedDivisions() {
                 <span className="text-xs font-semibold uppercase tracking-[0.4em] text-text-muted">
                   {division.number}
                 </span>
-                <span className="h-10 w-10 rounded-full border border-primary/30" />
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 text-primary">
+                  <Icon className="h-4 w-4" />
+                </span>
               </div>
               <div className="mt-6 space-y-4">
                 <h3 className="text-2xl font-semibold text-text-main">
@@ -115,7 +121,8 @@ export default function SpecializedDivisions() {
                 Explore {division.title.split(" ")[0]} →
               </Link>
             </motion.article>
-          ))}
+          );
+          })}
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

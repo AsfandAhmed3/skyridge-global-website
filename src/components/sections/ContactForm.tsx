@@ -14,6 +14,8 @@ export default function ContactForm() {
     message: "",
   });
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const emailIsValid = useMemo(() => {
     if (!form.email) {
@@ -37,6 +39,7 @@ export default function ContactForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSuccess(null);
     const requiredComplete =
       form.focus &&
       form.timeline &&
@@ -51,6 +54,35 @@ export default function ContactForm() {
     }
 
     setError(null);
+    setSubmitting(true);
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+
+        setSuccess("Your inquiry has been sent. We will respond shortly.");
+        setForm({
+          focus: "",
+          timeline: "",
+          budget: "",
+          firstName: "",
+          lastName: "",
+          email: "",
+          message: "",
+        });
+        setStep(0);
+      })
+      .catch(() => {
+        setError("Unable to send right now. Please try again shortly.");
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
   };
 
   return (
@@ -83,7 +115,7 @@ export default function ContactForm() {
           <label className="flex flex-col gap-2 text-xs uppercase tracking-[0.3em] text-text-muted">
             Advisory Focus
             <select
-              className="min-h-[48px] rounded-md border border-border-subtle bg-surface px-4 py-3 text-sm text-text-main outline-none focus:border-primary"
+              className="min-h-[48px] rounded-md border border-border-subtle bg-surface px-4 py-3 text-sm text-text-main outline-none focus:border-primary normal-case tracking-normal"
               value={form.focus}
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, focus: event.target.value }))
@@ -119,7 +151,7 @@ export default function ContactForm() {
           <label className="flex flex-col gap-2 text-xs uppercase tracking-[0.3em] text-text-muted">
             Timeline
             <select
-              className="min-h-[48px] rounded-md border border-border-subtle bg-surface px-4 py-3 text-sm text-text-main outline-none focus:border-primary"
+              className="min-h-[48px] rounded-md border border-border-subtle bg-surface px-4 py-3 text-sm text-text-main outline-none focus:border-primary normal-case tracking-normal"
               value={form.timeline}
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, timeline: event.target.value }))
@@ -146,7 +178,7 @@ export default function ContactForm() {
           <label className="flex flex-col gap-2 text-xs uppercase tracking-[0.3em] text-text-muted md:col-span-2">
             Estimated Budget Range
             <select
-              className="min-h-[48px] rounded-md border border-border-subtle bg-surface px-4 py-3 text-sm text-text-main outline-none focus:border-primary"
+              className="min-h-[48px] rounded-md border border-border-subtle bg-surface px-4 py-3 text-sm text-text-main outline-none focus:border-primary normal-case tracking-normal"
               value={form.budget}
               onChange={(event) =>
                 setForm((prev) => ({ ...prev, budget: event.target.value }))
@@ -181,7 +213,7 @@ export default function ContactForm() {
           <label className="flex flex-col gap-2 text-xs uppercase tracking-[0.3em] text-text-muted">
             First Name
             <input
-              className="min-h-[48px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary"
+              className="min-h-[48px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary normal-case tracking-normal"
               placeholder="First name"
               value={form.firstName}
               onChange={(event) =>
@@ -193,7 +225,7 @@ export default function ContactForm() {
           <label className="flex flex-col gap-2 text-xs uppercase tracking-[0.3em] text-text-muted">
             Last Name
             <input
-              className="min-h-[48px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary"
+              className="min-h-[48px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary normal-case tracking-normal"
               placeholder="Last name"
               value={form.lastName}
               onChange={(event) =>
@@ -205,7 +237,7 @@ export default function ContactForm() {
           <label className="flex flex-col gap-2 text-xs uppercase tracking-[0.3em] text-text-muted md:col-span-2">
             Email Address
             <input
-              className="min-h-[48px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary"
+              className="min-h-[48px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary normal-case tracking-normal"
               placeholder="name@company.com"
               type="email"
               value={form.email}
@@ -228,7 +260,7 @@ export default function ContactForm() {
         <label className="flex flex-col gap-2 text-xs uppercase tracking-[0.3em] text-text-muted">
           Project Notes
           <textarea
-            className="min-h-[160px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary"
+            className="min-h-[160px] rounded-md border border-border-subtle bg-transparent px-4 py-3 text-sm text-text-main outline-none focus:border-primary normal-case tracking-normal"
             placeholder="Tell us about your goals, preferred jurisdictions, and timelines."
             value={form.message}
             onChange={(event) =>
@@ -258,7 +290,7 @@ export default function ContactForm() {
             Continue
           </button>
         ) : (
-          <button type="submit" className="btn-primary">
+          <button type="submit" className="btn-primary" disabled={submitting}>
             Submit Inquiry
           </button>
         )}
@@ -268,6 +300,9 @@ export default function ContactForm() {
           </span>
         ) : null}
         {error ? <span className="text-xs text-primary">{error}</span> : null}
+        {success ? (
+          <span className="text-xs text-emerald-300">{success}</span>
+        ) : null}
       </div>
     </form>
   );

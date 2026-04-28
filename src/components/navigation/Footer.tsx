@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Globe, MapPin, MessageCircle, Send } from "lucide-react";
+import { Globe, MessageCircle, Send } from "lucide-react";
 
 const services = [
   "Investment Migration",
@@ -17,12 +17,10 @@ const company = [
   { label: "Careers", href: "/contact" },
 ];
 
-const offices = ["London", "Dubai", "Singapore", "Geneva", "Lisbon"];
-
 export default function Footer() {
   return (
     <footer className="border-t border-border-subtle bg-surface/60">
-      <div className="mx-auto grid w-full max-w-6xl items-start gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-[2fr,1fr,1fr,1fr]">
+      <div className="mx-auto grid w-full max-w-6xl items-start gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-[2fr,1fr,1fr]">
         <div className="space-y-4">
           <div className="text-lg font-semibold tracking-[0.3em]">SKYRIDGE</div>
           <p className="text-sm leading-6 text-text-muted">
@@ -74,16 +72,11 @@ export default function Footer() {
 
         <div className="space-y-3 text-sm">
           <div className="text-xs uppercase tracking-[0.3em] text-text-muted">
-            Global Offices
+            Global Coverage
           </div>
-          <ul className="space-y-2 text-text-muted">
-            {offices.map((office) => (
-              <li key={office} className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>{office}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="text-sm leading-6 text-text-muted">
+            Advisory support for cross-border mandates and international mobility planning.
+          </p>
         </div>
       </div>
 
