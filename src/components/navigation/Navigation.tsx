@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const navigation = [
@@ -43,6 +44,7 @@ const navigation = [
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openLabel, setOpenLabel] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -56,6 +58,7 @@ export default function Navigation() {
     const onPointerDown = (event: PointerEvent) => {
       if (!navRef.current?.contains(event.target as Node)) {
         setOpenLabel(null);
+        setMobileOpen(false);
       }
     };
 
@@ -135,7 +138,52 @@ export default function Navigation() {
           <Link href="/contact" className="btn-primary hidden h-10 lg:inline-flex">
             Get Started
           </Link>
+
+          <button
+            type="button"
+            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-md border border-border-subtle text-text-main transition hover:border-primary/60 lg:hidden"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
+
+        {mobileOpen ? (
+          <div className="mt-3 rounded-2xl border border-border-subtle bg-surface/95 p-4 shadow-lg lg:hidden">
+            <div className="flex flex-col gap-3">
+              {navigation.map((item) => (
+                <div key={item.label} className="flex flex-col gap-2">
+                  <Link
+                    href={item.href}
+                    className="text-xs font-semibold uppercase tracking-[0.2em] text-text-main"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children ? (
+                    <div className="ml-3 flex flex-col gap-2">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="text-[0.65rem] uppercase tracking-[0.2em] text-text-muted"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+              <Link href="/contact" className="btn-primary mt-2">
+                Get Started
+              </Link>
+            </div>
+          </div>
+        ) : null}
       </div>
     </header>
   );
