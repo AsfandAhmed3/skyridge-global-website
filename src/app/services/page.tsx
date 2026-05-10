@@ -4,6 +4,12 @@ import FinalCta from "@/components/sections/FinalCta";
 import PageHero from "@/components/sections/PageHero";
 import SimpleCardGrid from "@/components/sections/SimpleCardGrid";
 
+export const metadata = {
+  title: "Advisory Services | Skyridge Global",
+  description:
+    "Integrated advisory combining migration planning and business execution — senior-led teams delivering compliant, investor-grade outcomes.",
+};
+
 const divisions = [
   {
     title: "Migration Advisory",
@@ -18,7 +24,7 @@ const divisions = [
   {
     title: "Wealth & Private Office",
     description:
-      "Discreet structuring for UHNW families seeking legacy and cross-border coordination.",
+     "Private Office Coordination — We help internationally mobile clients coordinate with their existing wealth managers, legal advisors, and family offices during relocation and transition. We do not provide investment or wealth management advice.",
   },
   {
     title: "Corporate Structuring",

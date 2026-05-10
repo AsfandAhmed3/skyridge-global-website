@@ -3,6 +3,12 @@ import ContentSection from "@/components/sections/ContentSection";
 import FinalCta from "@/components/sections/FinalCta";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Private Office Coordination | Skyridge Global",
+  description:
+    "Coordination for internationally mobile clients with existing wealth managers, family offices, and legal advisors during relocation and transition — we do not provide investment advice.",
+};
+
 const pillars = [
   {
     title: "Family Office Design",
@@ -30,9 +36,9 @@ export default function WealthPrivateOfficePage() {
   return (
     <div className="flex flex-col">
       <PageHero
-        eyebrow="Wealth & Private Office"
-        title="Discreet Stewardship for Global Families"
-        description="Confidential advisory for UHNW principals seeking durable structures, legacy planning, and cross-border coordination."
+          eyebrow="Private Office Coordination"
+          title="Coordination with Your Existing Advisors"
+          description="We help internationally mobile clients coordinate with their existing wealth managers, legal advisors, and family offices during relocation and transition. We do not provide investment or wealth management advice."
       />
       <ContentSection title="Private Office Pillars">
         <p>

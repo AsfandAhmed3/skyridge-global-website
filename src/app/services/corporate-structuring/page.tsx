@@ -3,6 +3,12 @@ import ContentSection from "@/components/sections/ContentSection";
 import FinalCta from "@/components/sections/FinalCta";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Corporate Structuring | Skyridge Global",
+  description:
+    "Entity design, governance and cross-border operating models — coordinated with local advisors and compliance professionals.",
+};
+
 const capabilities = [
   {
     title: "Entity Design",

@@ -3,6 +3,12 @@ import FinalCta from "@/components/sections/FinalCta";
 import PageHero from "@/components/sections/PageHero";
 import SimpleCardGrid from "@/components/sections/SimpleCardGrid";
 
+export const metadata = {
+  title: "About Us | Skyridge Global",
+  description:
+    "Skyridge Global provides integrated advisory for business-led migration and cross-border investment — clarity, discretion, and disciplined execution.",
+};
+
 const pillars = [
   {
     title: "Vision",

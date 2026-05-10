@@ -9,12 +9,18 @@ const services = [
   "Asset Protection",
 ];
 
+const serviceLinks = [
+  { label: "Investment Migration", href: "/services/migration-advisory" },
+  { label: "Wealth Advisory", href: "/services/wealth-private-office" },
+  { label: "Corporate Structuring", href: "/services/corporate-structuring" },
+  { label: "Private Office", href: "/services/wealth-private-office" },
+  { label: "Asset Protection", href: "/services" },
+];
+
 const company = [
   { label: "About Us", href: "/about" },
   { label: "Our Team", href: "/about/team" },
   { label: "Insights", href: "/insights" },
-  { label: "Press", href: "/insights" },
-  { label: "Careers", href: "/contact" },
 ];
 
 export default function Footer() {
@@ -44,9 +50,14 @@ export default function Footer() {
             Services
           </div>
           <ul className="space-y-2 text-text-muted">
-            {services.map((item) => (
-              <li key={item} className="transition hover:text-text-main">
-                {item}
+              {serviceLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-text-muted transition hover:text-text-main"
+                  >
+                    {item.label}
+                  </Link>
               </li>
             ))}
           </ul>
@@ -78,6 +89,19 @@ export default function Footer() {
             Advisory support for cross-border mandates and international mobility planning.
           </p>
         </div>
+
+          <div className="space-y-3 text-sm">
+            <div className="text-xs uppercase tracking-[0.3em] text-text-muted">
+              Office
+            </div>
+            <p className="text-sm leading-6 text-text-muted">
+              2030 Bristol Circle, Suite 210
+              <br />
+              Oakville, ON L6H 0H2
+              <br />
+              Canada
+            </p>
+          </div>
       </div>
 
       <div className="border-t border-border-subtle">

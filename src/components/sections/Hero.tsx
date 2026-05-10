@@ -70,20 +70,6 @@ export default function Hero() {
         >
           <div className="relative h-full w-full overflow-hidden rounded-3xl border border-border-subtle bg-[linear-gradient(140deg,_#1d0f2d_10%,_#2d1647_55%,_#12091d_100%)]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08)_0%,_transparent_40%)]" />
-            <div className="absolute bottom-10 right-10 w-56 rounded-2xl border border-border-subtle bg-surface/80 p-4 shadow-xl shadow-black/40">
-              <div className="text-[0.6rem] uppercase tracking-[0.3em] text-text-muted">
-                Private Mandates
-              </div>
-              <div className="mt-2 text-sm font-semibold text-text-main">
-                Discreet Advisory
-              </div>
-              <div className="mt-2 text-2xl font-semibold text-primary">
-                By Referral
-              </div>
-              <div className="mt-1 text-xs text-text-muted">
-                Senior partner engagement only
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>

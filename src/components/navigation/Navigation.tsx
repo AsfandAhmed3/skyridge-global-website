@@ -80,10 +80,7 @@ export default function Navigation() {
             </div>
             <div className="text-left">
               <div className="text-sm font-semibold tracking-[0.3em] text-text-main">
-                SKYRIDGE
-              </div>
-              <div className="text-[0.65rem] uppercase tracking-[0.4em] text-text-muted">
-                Global
+                SKYRIDGE <span className="text-[0.65rem] uppercase tracking-[0.4em] text-text-muted">Global</span>
               </div>
             </div>
           </Link>

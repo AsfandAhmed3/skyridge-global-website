@@ -3,6 +3,12 @@ import ContentSection from "@/components/sections/ContentSection";
 import FinalCta from "@/components/sections/FinalCta";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Deal & Business Advisory | Skyridge Global",
+  description:
+    "End-to-end deal packaging and business advisory for investors — sector research, diligence, financial modelling and execution support for inbound mandates.",
+};
+
 const services = [
   "Sector opportunity identification",
   "Deal sourcing and vendor due diligence",

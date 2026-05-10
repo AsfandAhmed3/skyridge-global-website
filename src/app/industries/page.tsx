@@ -3,6 +3,12 @@ import FinalCta from "@/components/sections/FinalCta";
 import PageHero from "@/components/sections/PageHero";
 import SimpleCardGrid from "@/components/sections/SimpleCardGrid";
 
+export const metadata = {
+  title: "Sector Opportunities | Skyridge Global",
+  description:
+    "Sector-focused advisory for investors seeking operational pathways to residency and sustainable growth across priority industries.",
+};
+
 const sectors = [
   {
     title: "Technology and SaaS",

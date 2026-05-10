@@ -28,7 +28,7 @@ export default function FinalCta() {
             Schedule a Private Consultation
           </Link>
           <Link href="/contact" className="btn-outline">
-            Download Brochure
+              Request a Brochure
           </Link>
         </div>
       </motion.div>

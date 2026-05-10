@@ -3,6 +3,12 @@ import ContactForm from "@/components/sections/ContactForm";
 import ContentSection from "@/components/sections/ContentSection";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Start a Confidential Conversation | Skyridge Global",
+  description:
+    "Contact Skyridge Global for confidential advisory on migration, investment, and corporate structuring. Our team responds within two business days.",
+};
+
 const contacts = [
   {
     title: "Private Consultations",
@@ -50,6 +56,17 @@ export default function ContactPage() {
           review.
         </p>
       </ContentSection>
+        <ContentSection title="Registered Office">
+          <p>
+            Skyridge Global
+            <br />
+            2030 Bristol Circle, Suite 210
+            <br />
+            Oakville, ON L6H 0H2
+            <br />
+            Canada
+          </p>
+        </ContentSection>
     </div>
   );
 }

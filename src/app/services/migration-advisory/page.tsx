@@ -3,6 +3,12 @@ import ContentSection from "@/components/sections/ContentSection";
 import FinalCta from "@/components/sections/FinalCta";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Business-Led Migration Pathways | Skyridge Global",
+  description:
+    "Canada PNP and Start-Up Visa pathways combined with full business establishment support — immigration-grade business plans, registration, banking, and post-landing compliance.",
+};
+
 const services = [
   "Business plan preparation (immigration-grade)",
   "Province selection and PNP eligibility mapping",

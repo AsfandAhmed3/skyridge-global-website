@@ -65,7 +65,7 @@ export default function ContactForm() {
           throw new Error("Request failed");
         }
 
-        setSuccess("Your inquiry has been sent. We will respond shortly.");
+        setSuccess("Thank you for reaching out. A member of our team will be in touch within two business days.");
         setForm({
           focus: "",
           timeline: "",
@@ -136,9 +136,9 @@ export default function ContactForm() {
               </option>
               <option
                 className="bg-surface text-text-main"
-                value="Wealth & Private Office"
+                 value="Private Office Coordination"
               >
-                Wealth & Private Office
+                 Private Office Coordination
               </option>
               <option
                 className="bg-surface text-text-main"

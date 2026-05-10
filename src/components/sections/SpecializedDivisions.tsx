@@ -25,11 +25,11 @@ const divisions = [
     number: "02",
     title: "Business Advisory",
     description:
-      "Strategic wealth structuring, cross-border corporate formation, and bespoke tax optimization for global enterprises.",
+      "Strategic wealth structuring, cross-border corporate formation, and deal advisory for global enterprises.",
     highlights: [
       "Corporate Structuring",
       "Wealth Planning",
-      "Tax Optimization",
+      "Investment Analysis",
       "Family Office",
     ],
     href: "/services/business-advisory",
