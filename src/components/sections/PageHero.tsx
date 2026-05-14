@@ -28,7 +28,7 @@ export default function PageHero({
         <span className="text-xs uppercase tracking-[0.4em] text-primary">
           {eyebrow}
         </span>
-        <h1 className="text-4xl font-semibold leading-tight text-text-main md:text-5xl">
+        <h1 className="text-4xl font-semibold leading-tight text-yellow-400 md:text-5xl">
           {title}
         </h1>
         <p className="max-w-2xl text-sm leading-7 text-text-muted md:text-base">

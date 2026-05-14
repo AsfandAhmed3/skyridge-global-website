@@ -32,6 +32,21 @@ const contacts = [
   },
 ];
 
+const emailsByInquiryType = [
+  {
+    label: "General Inquiries",
+    email: "info@skyridgeglobal.com",
+  },
+  {
+    label: "Migration Advisory",
+    email: "migration@skyridgeglobal.com",
+  },
+  {
+    label: "Business & Deal Advisory",
+    email: "deals@skyridgeglobal.com",
+  },
+];
+
 export default function ContactPage() {
   return (
     <div className="flex flex-col">
@@ -55,6 +70,21 @@ export default function ContactPage() {
           time-sensitive mandates can be flagged in your message for priority
           review.
         </p>
+      </ContentSection>
+      <ContentSection title="Email Contact by Inquiry Type">
+        <div className="grid gap-6 md:grid-cols-2">
+          {emailsByInquiryType.map((item) => (
+            <div key={item.label} className="flex flex-col gap-2">
+              <p className="text-sm font-semibold text-text-main">{item.label}</p>
+              <a
+                href={`mailto:${item.email}`}
+                className="text-text-muted transition hover:text-primary"
+              >
+                {item.email}
+              </a>
+            </div>
+          ))}
+        </div>
       </ContentSection>
         <ContentSection title="Registered Office">
           <p>

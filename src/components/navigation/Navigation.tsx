@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 const navigation = [
   { label: "Home", href: "/" },
   {
-    label: "Accounting & Services",
+    label: "Advisory Services",
     href: "/services",
     children: [
       { label: "Services Overview", href: "/services" },
@@ -20,7 +20,7 @@ const navigation = [
   },
   { label: "Industries", href: "/industries" },
   {
-    label: "Compliance",
+    label: "Regulatory & Compliance",
     href: "/compliance",
     children: [
       { label: "Compliance Overview", href: "/compliance" },
@@ -74,13 +74,14 @@ export default function Navigation() {
     >
       <div ref={navRef} className="mx-auto w-full max-w-6xl px-4 py-4">
         <div className="flex items-center gap-6 rounded-2xl border border-border-subtle bg-surface/60 px-5 py-3 shadow-lg shadow-black/30">
-          <Link href="/" className="flex items-center gap-3 whitespace-nowrap">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/60 bg-background/60">
-              <Image src="/logo.png" alt="Skyridge Global" width={26} height={26} />
-            </div>
-            <span className="text-sm font-semibold uppercase tracking-[0.32em] text-text-main">
-              SKYRIDGE GLOBAL
-            </span>
+          <Link href="/" className="flex items-center whitespace-nowrap">
+            <Image
+              src="/logo.png"
+              alt="Skyridge Global"
+              width={220}
+              height={56}
+              className="h-14 w-auto object-contain"
+            />
           </Link>
 
           <nav className="hidden flex-1 items-center justify-center gap-6 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-text-muted lg:flex">

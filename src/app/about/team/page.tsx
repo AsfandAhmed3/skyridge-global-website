@@ -10,28 +10,7 @@ export const metadata = {
     "Meet the leadership of Skyridge Global — experienced advisors in migration, compliance, and cross-border investment.",
 };
 
-const team = [
-  {
-    title: "Managing Partner",
-    description:
-      "Leads cross-border strategy and client engagement for migration mandates.",
-  },
-  {
-    title: "Head of Business Advisory",
-    description:
-      "Oversees deal sourcing, investment analysis, and execution oversight.",
-  },
-  {
-    title: "Director of Compliance",
-    description:
-      "Ensures alignment with CICC standards, KYC protocols, and documentation integrity.",
-  },
-  {
-    title: "Private Office Lead",
-    description:
-      "Coordinates legacy planning, family governance, and lifestyle relocation support.",
-  },
-];
+
 
 const founders = [
   {
@@ -45,7 +24,28 @@ const founders = [
     bio: "Adnan is a senior finance leader with 17+ years of experience across FP&A, capital allocation, project finance, and executive decision support in capital-intensive industries. He has held Director-level roles in the Gulf region and has extensive experience advising management teams, boards, and lenders on investment decisions, financial modeling, and cash flow strategy. At Skyridge Global, Adnan leads business and deal advisory mandates, bringing deep analytical rigour and cross-border investment expertise to every client engagement.",
   },
 ];
-
+// const team = [
+//   {
+//     title: "Managing Partner",
+//     description:
+//       "Leads cross-border strategy and client engagement for migration mandates.",
+//   },
+//   {
+//     title: "Head of Business Advisory",
+//     description:
+//       "Oversees deal sourcing, investment analysis, and execution oversight.",
+//   },
+//   {
+//     title: "Director of Compliance",
+//     description:
+//       "Ensures alignment with CICC standards, KYC protocols, and documentation integrity.",
+//   },
+//   {
+//     title: "Private Office Lead",
+//     description:
+//       "Coordinates legacy planning, family governance, and lifestyle relocation support.",
+//   },
+// ];
 export default function TeamPage() {
   return (
     <div className="flex flex-col">
@@ -54,15 +54,14 @@ export default function TeamPage() {
         title="Leadership & Advisory Team"
         description="A senior team of advisors with decades of combined experience across migration, investment, and compliance mandates."
       />
+      <FounderProfiles founders={founders} />
       <ContentSection title="Senior Leadership">
         <p>
           Our leadership team blends institutional expertise with entrepreneurial
           execution. We assemble interdisciplinary teams for each mandate to
           ensure that strategy, compliance, and delivery remain aligned.
         </p>
-        <SimpleCardGrid items={team} />
       </ContentSection>
-      <FounderProfiles founders={founders} />
       <ContentSection title="Advisory Network">
         <p>
           Skyridge Global coordinates with licensed consultants, legal advisors,

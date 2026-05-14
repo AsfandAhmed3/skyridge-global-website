@@ -36,8 +36,8 @@ export default function WealthPrivateOfficePage() {
   return (
     <div className="flex flex-col">
       <PageHero
-          eyebrow="Private Office Coordination"
-          title="Coordination with Your Existing Advisors"
+          eyebrow=""
+          title="Private Office Coordination"
           description="We help internationally mobile clients coordinate with their existing wealth managers, legal advisors, and family offices during relocation and transition. We do not provide investment or wealth management advice."
       />
       <ContentSection title="Private Office Pillars">

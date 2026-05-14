@@ -60,6 +60,12 @@ export default function Footer() {
             Bespoke migration and business advisory for ultra-high-net-worth
             individuals navigating complex international landscapes.
           </p>
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-text-muted">Email</p>
+            <a href="mailto:info@skyridgeglobal.com" className="text-sm text-text-main transition hover:text-primary">
+              info@skyridgeglobal.com
+            </a>
+          </div>
           <div className="flex items-center gap-3 text-sm text-text-muted">
             {socialLinks.map((item) => (
               <a
@@ -149,6 +155,17 @@ export default function Footer() {
             <Link href="/compliance/privacy-policy">Privacy Policy</Link>
             <Link href="/compliance/terms-of-service">Terms of Service</Link>
             <Link href="/compliance/cicc-framework">Regulatory Notice</Link>
+          </div>
+          <div className="flex items-center gap-2 normal-case">
+            <span className="text-text-muted">Developed by</span>
+            <a
+              href="https://www.deimos-tech.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-text-main underline"
+            >
+              Deimos Tech
+            </a>
           </div>
         </div>
       </div>
