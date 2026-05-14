@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { Globe, MessageCircle, Send } from "lucide-react";
+import Image from "next/image";
+import fbIcon from "@/icons/fb icon white.webp";
+import instaIcon from "@/icons/insta icon white.png";
+import linkedInIcon from "@/icons/linked in whote.png";
+import tikTokIcon from "@/icons/tiktok white.webp";
 
 const services = [
   "Investment Migration",
@@ -23,6 +27,29 @@ const company = [
   { label: "Insights", href: "/insights" },
 ];
 
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1J2i9wPU1Q/",
+    icon: fbIcon,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/skyridge.global?igsh=M25mb2g1bWprZXFo",
+    icon: instaIcon,
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@skyridge.global?_r=1&_t=ZS-96LxUTOifrE",
+    icon: tikTokIcon,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/skyridge-global/",
+    icon: linkedInIcon,
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-border-subtle bg-surface/60">
@@ -34,13 +61,24 @@ export default function Footer() {
             individuals navigating complex international landscapes.
           </p>
           <div className="flex items-center gap-3 text-sm text-text-muted">
-            {[Globe, MessageCircle, Send].map((Icon, index) => (
-              <span
-                key={index}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-text-muted"
+            {socialLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={item.label}
+                className="flex h-14 w-14 items-center justify-center rounded-full border border-border-subtle text-text-muted transition hover:border-primary hover:text-text-main"
+                title={item.label}
               >
-                <Icon className="h-4 w-4" />
-              </span>
+                <Image
+                  src={item.icon}
+                  alt={item.label}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8"
+                />
+              </a>
             ))}
           </div>
         </div>

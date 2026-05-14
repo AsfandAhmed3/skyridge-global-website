@@ -1,6 +1,12 @@
 import ContentSection from "@/components/sections/ContentSection";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Privacy Policy | Skyridge Global",
+  description:
+    "Learn how Skyridge Global collects, uses, protects, and shares personal information shared during advisory engagements.",
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col">

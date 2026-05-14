@@ -2,6 +2,12 @@ import ContentSection from "@/components/sections/ContentSection";
 import PageHero from "@/components/sections/PageHero";
 import SimpleCardGrid from "@/components/sections/SimpleCardGrid";
 
+export const metadata = {
+  title: "Compliance | Skyridge Global",
+  description:
+    "Review Skyridge Global's compliance framework, privacy policy, and terms of service for transparent, regulated advisory delivery.",
+};
+
 const items = [
   {
     title: "CICC Framework",

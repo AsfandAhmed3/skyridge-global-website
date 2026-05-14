@@ -2,6 +2,12 @@ import ContentSection from "@/components/sections/ContentSection";
 import InsightsGrid from "@/components/sections/InsightsGrid";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Insights | Skyridge Global",
+  description:
+    "Read Skyridge Global's market commentary and advisory briefs on migration pathways, investment trends, and compliance updates.",
+};
+
 export default function InsightsPage() {
   return (
     <div className="flex flex-col">

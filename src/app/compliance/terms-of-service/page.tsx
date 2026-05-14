@@ -1,6 +1,12 @@
 import ContentSection from "@/components/sections/ContentSection";
 import PageHero from "@/components/sections/PageHero";
 
+export const metadata = {
+  title: "Terms of Service | Skyridge Global",
+  description:
+    "Read the terms governing use of the Skyridge Global website and advisory communications.",
+};
+
 export default function TermsOfServicePage() {
   return (
     <div className="flex flex-col">

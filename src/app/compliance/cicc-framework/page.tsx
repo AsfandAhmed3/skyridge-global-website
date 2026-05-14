@@ -2,6 +2,12 @@ import ContentSection from "@/components/sections/ContentSection";
 import PageHero from "@/components/sections/PageHero";
 import SimpleCardGrid from "@/components/sections/SimpleCardGrid";
 
+export const metadata = {
+  title: "CICC Framework | Skyridge Global",
+  description:
+    "Explore the compliance framework Skyridge Global uses for KYC, AML, documentation integrity, and professional coordination.",
+};
+
 const principles = [
   {
     title: "KYC and AML Screening",
